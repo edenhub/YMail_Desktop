@@ -81,11 +81,17 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x53d1;&#x9001;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YMail_BtnSendActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="YMail_BtnTouch">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x9644;&#x4ef6;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YMail_BtnTouchActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -217,6 +223,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="&#x9644;&#x4ef6;1/&#x5220;&#x9664;"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="YMail_BtnTouch_1ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

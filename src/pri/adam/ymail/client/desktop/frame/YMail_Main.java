@@ -39,13 +39,14 @@ public class YMail_Main extends javax.swing.JFrame {
         YMail_MainBody = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        YMail_TreeSlide = new javax.swing.JTree();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        YMail_TableContent = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton3 = new javax.swing.JButton();
+        YMail_TextFieldSearch = new javax.swing.JTextField();
+        YMail_BtnSearch = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
         YMail_MenuBar = new javax.swing.JMenuBar();
         YMail_Menu_File = new javax.swing.JMenu();
         YMail_MenuItem_Login = new javax.swing.JMenuItem();
@@ -66,6 +67,11 @@ public class YMail_Main extends javax.swing.JFrame {
         });
 
         YMail_BtnSend.setText("写信");
+        YMail_BtnSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnSendActionPerformed(evt);
+            }
+        });
 
         jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -77,12 +83,27 @@ public class YMail_Main extends javax.swing.JFrame {
         });
 
         YMail_BtnDelete.setText("删除");
+        YMail_BtnDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnDeleteActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         jButton1.setText("通讯录");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("设置");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout YMail_QuickKeyLayout = new javax.swing.GroupLayout(YMail_QuickKey);
         YMail_QuickKey.setLayout(YMail_QuickKeyLayout);
@@ -150,8 +171,8 @@ public class YMail_Main extends javax.swing.JFrame {
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("垃圾邮件");
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        YMail_TreeSlide.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(YMail_TreeSlide);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -166,7 +187,7 @@ public class YMail_Main extends javax.swing.JFrame {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        YMail_TableContent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -185,36 +206,51 @@ public class YMail_Main extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane2.setViewportView(jTable1);
-        if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setResizable(false);
-            jTable1.getColumnModel().getColumn(1).setResizable(false);
-            jTable1.getColumnModel().getColumn(2).setResizable(false);
-            jTable1.getColumnModel().getColumn(3).setResizable(false);
+        jScrollPane2.setViewportView(YMail_TableContent);
+        if (YMail_TableContent.getColumnModel().getColumnCount() > 0) {
+            YMail_TableContent.getColumnModel().getColumn(0).setResizable(false);
+            YMail_TableContent.getColumnModel().getColumn(1).setResizable(false);
+            YMail_TableContent.getColumnModel().getColumn(2).setResizable(false);
+            YMail_TableContent.getColumnModel().getColumn(3).setResizable(false);
         }
 
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jTextField1.setText("全文搜索");
+        YMail_TextFieldSearch.setText("全文搜索");
+        YMail_TextFieldSearch.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                YMail_TextFieldSearchKeyPressed(evt);
+            }
+        });
 
-        jButton3.setText("搜索");
+        YMail_BtnSearch.setText("搜索");
+        YMail_BtnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnSearchActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("收信箱（11封信，3封未读）");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(YMail_TextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton3)
+                .addComponent(YMail_BtnSearch)
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addComponent(jButton3))
+                .addComponent(YMail_TextFieldSearch, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(YMail_BtnSearch)
+                .addComponent(jLabel1))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -300,6 +336,30 @@ public class YMail_Main extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_YMail_BtnBackActionPerformed
 
+    private void YMail_BtnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnSendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnSendActionPerformed
+
+    private void YMail_BtnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnDeleteActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnDeleteActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void YMail_BtnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnSearchActionPerformed
+
+    private void YMail_TextFieldSearchKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_YMail_TextFieldSearchKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_TextFieldSearchKeyPressed
+
     /**
      * @param args the command line arguments
      */
@@ -339,6 +399,7 @@ public class YMail_Main extends javax.swing.JFrame {
     private javax.swing.JButton YMail_BtnBack;
     private javax.swing.JButton YMail_BtnDelete;
     private javax.swing.JButton YMail_BtnReceive;
+    private javax.swing.JButton YMail_BtnSearch;
     private javax.swing.JButton YMail_BtnSend;
     private javax.swing.JPanel YMail_MainBody;
     private javax.swing.JMenuBar YMail_MenuBar;
@@ -348,9 +409,12 @@ public class YMail_Main extends javax.swing.JFrame {
     private javax.swing.JMenu YMail_Menu_File;
     private javax.swing.JMenu YMail_Menu_Help;
     private javax.swing.JPanel YMail_QuickKey;
+    private javax.swing.JTable YMail_TableContent;
+    private javax.swing.JTextField YMail_TextFieldSearch;
+    private javax.swing.JTree YMail_TreeSlide;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -358,8 +422,5 @@ public class YMail_Main extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

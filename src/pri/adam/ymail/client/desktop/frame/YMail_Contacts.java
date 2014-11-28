@@ -29,26 +29,31 @@ public class YMail_Contacts extends javax.swing.JDialog {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        YMail_BtnNewContract = new javax.swing.JButton();
+        YMail_BtnSynContracts = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTree1 = new javax.swing.JTree();
+        YMail_TreeSlide = new javax.swing.JTree();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        YMail_TableContent = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("联系人");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jButton1.setText("新建联系人");
-
-        jButton2.setText("同步联系人");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        YMail_BtnNewContract.setText("新建联系人");
+        YMail_BtnNewContract.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                YMail_BtnNewContractActionPerformed(evt);
+            }
+        });
+
+        YMail_BtnSynContracts.setText("同步联系人");
+        YMail_BtnSynContracts.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnSynContractsActionPerformed(evt);
             }
         });
 
@@ -58,9 +63,9 @@ public class YMail_Contacts extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1)
+                .addComponent(YMail_BtnNewContract)
                 .addGap(18, 18, 18)
-                .addComponent(jButton2)
+                .addComponent(YMail_BtnSynContracts)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -68,8 +73,8 @@ public class YMail_Contacts extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(YMail_BtnNewContract)
+                    .addComponent(YMail_BtnSynContracts))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -82,8 +87,8 @@ public class YMail_Contacts extends javax.swing.JDialog {
         treeNode1.add(treeNode2);
         treeNode2 = new javax.swing.tree.DefaultMutableTreeNode("未知联系人");
         treeNode1.add(treeNode2);
-        jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
-        jScrollPane1.setViewportView(jTree1);
+        YMail_TreeSlide.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
+        jScrollPane1.setViewportView(YMail_TreeSlide);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -96,7 +101,7 @@ public class YMail_Contacts extends javax.swing.JDialog {
             .addComponent(jScrollPane1)
         );
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        YMail_TableContent.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -107,7 +112,7 @@ public class YMail_Contacts extends javax.swing.JDialog {
                 "昵称", "邮箱", "备注", "操作"
             }
         ));
-        jScrollPane2.setViewportView(jTable1);
+        jScrollPane2.setViewportView(YMail_TableContent);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -142,9 +147,13 @@ public class YMail_Contacts extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void YMail_BtnSynContractsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnSynContractsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_YMail_BtnSynContractsActionPerformed
+
+    private void YMail_BtnNewContractActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnNewContractActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnNewContractActionPerformed
 
     /**
      * @param args the command line arguments
@@ -189,14 +198,14 @@ public class YMail_Contacts extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton YMail_BtnNewContract;
+    private javax.swing.JButton YMail_BtnSynContracts;
+    private javax.swing.JTable YMail_TableContent;
+    private javax.swing.JTree YMail_TreeSlide;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTree jTree1;
     // End of variables declaration//GEN-END:variables
 }

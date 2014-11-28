@@ -51,8 +51,18 @@ public class YMail_WriteMail extends javax.swing.JDialog {
         YMail_PanelTop.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         YMail_BtnSend.setText("发送");
+        YMail_BtnSend.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnSendActionPerformed(evt);
+            }
+        });
 
         YMail_BtnTouch.setText("附件");
+        YMail_BtnTouch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnTouchActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout YMail_PanelTopLayout = new javax.swing.GroupLayout(YMail_PanelTop);
         YMail_PanelTop.setLayout(YMail_PanelTopLayout);
@@ -96,6 +106,11 @@ public class YMail_WriteMail extends javax.swing.JDialog {
         YMail_LabelTouch.setText("附  件：");
 
         YMail_BtnTouch_1.setText("附件1/删除");
+        YMail_BtnTouch_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                YMail_BtnTouch_1ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout YMail_PanelPropertyLayout = new javax.swing.GroupLayout(YMail_PanelProperty);
         YMail_PanelProperty.setLayout(YMail_PanelPropertyLayout);
@@ -183,6 +198,18 @@ public class YMail_WriteMail extends javax.swing.JDialog {
     private void YMail_TextFieldReceiverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_TextFieldReceiverActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_YMail_TextFieldReceiverActionPerformed
+
+    private void YMail_BtnSendActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnSendActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnSendActionPerformed
+
+    private void YMail_BtnTouchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnTouchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnTouchActionPerformed
+
+    private void YMail_BtnTouch_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_YMail_BtnTouch_1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_YMail_BtnTouch_1ActionPerformed
 
     /**
      * @param args the command line arguments
